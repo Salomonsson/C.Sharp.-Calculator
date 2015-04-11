@@ -102,7 +102,7 @@ namespace ConsoleApplicationEASTER
                          Console.Write(tal2());
                          userInput.inData2 = Convert.ToInt32(Console.ReadLine());
 
-                         //DisplayMultiplication
+                         //DisplayAddition
                          display.DisplayAddition(userInput.inData1, userInput.inData2);
                          Main(args);
                         break;
@@ -114,7 +114,7 @@ namespace ConsoleApplicationEASTER
                         Console.Write(tal2());
                         userInput.inData2 = Convert.ToInt32(Console.ReadLine());
 
-                        //DisplayMultiplication
+                        //DisplayDivision
                         display.DisplayDiv(userInput.inData1, userInput.inData2);
                         Main(args);
                         break;
@@ -127,7 +127,7 @@ namespace ConsoleApplicationEASTER
                         Console.Write(tal2());
                         userInput.inData2 = Convert.ToInt32(Console.ReadLine());
 
-                        //DisplayMultiplication
+                        //DisplaySubstraktion
                         display.DisplaySub(userInput.inData1, userInput.inData2);
                        Main(args);
                         break;
@@ -143,6 +143,7 @@ namespace ConsoleApplicationEASTER
                                   uInt = 0;
                                   display.DisplayMultipleIncome(uInput);
 
+                                    //Loop out all objects
                                   int summaObject = 0;
                                   Console.WriteLine("*******");
                                   foreach (int obj in display)
@@ -150,6 +151,7 @@ namespace ConsoleApplicationEASTER
                                       summaObject += obj;
                                       Console.Write(" + {0}", obj);
                                   }
+                                  //Total of all objects.
                                   Console.WriteLine("");
                                   Console.WriteLine("summaObject = {0}", summaObject);
                               } while (uInt != null);
@@ -176,6 +178,7 @@ namespace ConsoleApplicationEASTER
  // Collection of tal objects. This class 
  // implements IEnumerable so that it can be used 
  // with ForEach syntax.
+ 
  public class ClassMultipleIncome {
 
      int antal;
