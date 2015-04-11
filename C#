@@ -1,3 +1,9 @@
+Uppdaterade lite, om någon är intresserad, verkar som att det inte går att loopa ut sum från list i en function, då det är lagrade object??
+
+Tips?
+
+
+[PHP]
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -208,7 +214,6 @@ public class ClassDisplayCalculator  : ClassFunctions
             {
                 Console.Write("Svar: {0} + {1} = ", tal1, tal2);
                 Console.WriteLine(this.addition(tal1, tal2));
-                //Console.WriteLine(callFunction.multiplikation(userInput.inData1, userInput.inData2));
                 Console.ReadLine();
             }
 
@@ -216,7 +221,6 @@ public class ClassDisplayCalculator  : ClassFunctions
             {
                 Console.Write("Svar: {0} / {1} = ", tal1, tal2);
                 Console.WriteLine(this.division(tal1, tal2));
-                //Console.WriteLine(callFunction.multiplikation(userInput.inData1, userInput.inData2));
                 Console.ReadLine();
             }
 
@@ -224,7 +228,6 @@ public class ClassDisplayCalculator  : ClassFunctions
             {
                 Console.Write("Svar: {0} - {1} = ", tal1, tal2);
                 Console.WriteLine(this.substraktion(tal1, tal2));
-                //Console.WriteLine(callFunction.multiplikation(userInput.inData1, userInput.inData2));
                 Console.ReadLine();
             }
 
@@ -232,7 +235,6 @@ public class ClassDisplayCalculator  : ClassFunctions
             {
                 Console.Write("Svar: {0} * {1} = ", tal1, tal2);
                 Console.WriteLine(this.multiplikation(tal1,tal2));
-                //Console.WriteLine(callFunction.multiplikation(userInput.inData1, userInput.inData2));
                 Console.ReadLine();
                
             }
@@ -262,5 +264,4 @@ public class ClassDisplayCalculator  : ClassFunctions
     }
  }
 }
-
-
+[/PHP]
