@@ -36,33 +36,8 @@ namespace ConsoleApplicationEASTER
 
  public class ClassUserActivity
     {
-        //private int tal1t;
-        // private int tal2;
-
-        //public int tal1 { get; set; }
-
         public int inData1 { get; set; }
-
-
         public int inData2 { get; set; }
-        /*
-        public int inData2{
-            get { return tal2; }
-            set { tal2 = value; }
-        }
-        */
-
-        public static void UseParams(params int[] list)
-        {
-            List<int> talList2 = new List<int>(list);
-            for (int i = 0; i < list.Length; i++)
-            {
-                Console.Write(list[i] + " ");
-            }
-            Console.WriteLine();
-        }
-
-
     }
 
 
@@ -84,11 +59,6 @@ namespace ConsoleApplicationEASTER
             return "Tal 2: ";
         }
 
-
-
-
-
-
         static void Main(string[] args)
         {
             Console.Clear();
@@ -104,9 +74,7 @@ namespace ConsoleApplicationEASTER
                 Console.WriteLine("**En simpel miniräknare**");
 
                 //Get instance
-                //ClassFunctions callFunction = new ClassFunctions();
                 ClassUserActivity userInput = new ClassUserActivity();
-
                 ClassDisplayCalculator display = new ClassDisplayCalculator();
                 
                 Console.WriteLine("");
@@ -115,21 +83,13 @@ namespace ConsoleApplicationEASTER
                     case 1:
                                     Console.WriteLine("Case1 - Multiplikation" + 
                                             Environment.NewLine + "Skriv in två heltal.");
-
                                     Console.Write(tal1());
                                     userInput.inData1 = Convert.ToInt32(Console.ReadLine());
                                     Console.Write(tal2());
                                     userInput.inData2 = Convert.ToInt32(Console.ReadLine());
 
-
-                        //Test display.
-
                                     //DisplayMultiplication
                                     display.DisplayMultiplication(userInput.inData1, userInput.inData2);
-
-                                   // Console.Write("Svar: {0} * {1} = ", userInput.inData1, userInput.inData2);
-                                    //Console.WriteLine(callFunction.multiplikation(userInput.inData1, userInput.inData2));
-                                    //Console.ReadLine();
                                     Main(args);
                         break;
 
@@ -137,7 +97,6 @@ namespace ConsoleApplicationEASTER
                          Console.WriteLine("Case2 - Additation"+
                              Environment.NewLine +
                              "Skriv in 2 heltal");
-
                          Console.Write(tal1());
                          userInput.inData1 = Convert.ToInt32(Console.ReadLine());
                          Console.Write(tal2());
@@ -145,18 +104,11 @@ namespace ConsoleApplicationEASTER
 
                          //DisplayMultiplication
                          display.DisplayAddition(userInput.inData1, userInput.inData2);
-
-
-                       // Console.Write("Svar: {0} + {1} = ", userInput.inData1, userInput.inData2);
-                        //Console.WriteLine(callFunction.addition(userInput.inData1, userInput.inData2));
-                          //Console.ReadLine();
-                         //
                          Main(args);
                         break;
 
                     case 3:
                         Console.WriteLine("Case3 - Division");
-
                         Console.Write(tal1());
                         userInput.inData1 = Convert.ToInt32(Console.ReadLine());
                         Console.Write(tal2());
@@ -164,13 +116,7 @@ namespace ConsoleApplicationEASTER
 
                         //DisplayMultiplication
                         display.DisplayDiv(userInput.inData1, userInput.inData2);
-
-                        //Console.Write("Svar: ");
-                        //Console.WriteLine(callFunction.division(userInput.inData1, userInput.inData2));
-                        //Console.ReadLine();
                         Main(args);
-
-
                         break;
 
                     case 4:
@@ -183,43 +129,20 @@ namespace ConsoleApplicationEASTER
 
                         //DisplayMultiplication
                         display.DisplaySub(userInput.inData1, userInput.inData2);
-                        //Console.WriteLine(callFunction.substraktion(userInput.inData1, userInput.inData2));
-                       //Console.ReadLine();
                        Main(args);
                         break;
 
                     case 5:
                           Console.WriteLine("MULTI = Addition - Substraktion, Press Q for menu.");
                           Console.WriteLine();
-
-                          //ClassMultipleIncome listIncome = new ClassMultipleIncome();
                           int uInt;
-                          //ClassDisplayCalculator display = new ClassDisplayCalculator();
-
-                         
                     //Do while if readline is not null or "q"
                               do
                               {
                                   string uInput = Console.ReadLine();
                                   uInt = 0;
-                                  //listIncome.Display(uInput);
-                                  display.Display(uInput);
-                                  /*
-                                  if (uInput.Contains("q") == true)
-                                  {
-                                      Main(args);
-                                  }
-                                  */
+                                  display.DisplayMultipleIncome(uInput);
 
-                                  /*
-                                  if (int.TryParse(uInput, out uInt))
-                                  {
-                                      listIncome.AddTal(uInt);
-                                  }
-                                  else {
-                                      Console.WriteLine("Endast siffror!");
-                                  }
-                                  */
                                   int summaObject = 0;
                                   Console.WriteLine("*******");
                                   foreach (int obj in display)
@@ -227,7 +150,6 @@ namespace ConsoleApplicationEASTER
                                       summaObject += obj;
                                       Console.Write(" + {0}", obj);
                                   }
-
                                   Console.WriteLine("");
                                   Console.WriteLine("summaObject = {0}", summaObject);
                               } while (uInt != null);
@@ -235,10 +157,8 @@ namespace ConsoleApplicationEASTER
 
                     case 6:
                         Console.WriteLine("Du har tryckt noll!");
-                        
                         Environment.Exit(0);
                         break;
-                      
                 }
             }
             else
@@ -251,20 +171,18 @@ namespace ConsoleApplicationEASTER
     }
 
 
-
- //https://msdn.microsoft.com/en-us/library/dscyy5s0.aspx
-
-    //NOTIS!! -----  class UserActivity->MultipleIncome->Function->Display????? Korrekt?! Inheritence
+    //NOTIS!! -----  class UserActivity->MultipleIncome->Function->Display.. Inheritence
 
  // Collection of tal objects. This class 
  // implements IEnumerable so that it can be used 
  // with ForEach syntax.
  public class ClassMultipleIncome {
 
+     int antal;
     // Private members. 
      public List<ClassUserActivity> tal5 = new List<ClassUserActivity>();
 
-    // Public methods. //Add to list
+ //Add to list
     public void AddTal(int name)
     {
         tal5.Add(new ClassUserActivity { inData1 = name });
@@ -274,43 +192,17 @@ namespace ConsoleApplicationEASTER
     {
         foreach (ClassUserActivity theAnimal in tal5)
         {
-            yield return theAnimal.inData1;
+            antal = +theAnimal.inData1;
+
+           // yield return theAnimal.inData1;
+            yield return antal;
         }
     }
+}
 
-
-   
-
-    }
-/*
-    public void listaSum()
-    {
-        //int total = tal5.Sum(x => Convert.ToInt32(x));
-        //int total = Convert.ToInt32(tal5.Sum(x => x));
-
-        //return total;
-        //yield return total;
-
-
-         //var total= tal5.Sum(x=>x.tal1);
-        // var total = tal5.Last(x => x.tal1);
-        //var testt = tal5.LastIndexOf(new user { tal1 = name });
-        //Console.WriteLine(tal5.Last());
-         //yield return total;
-        /*
-        int summa = 0;
-        /*
-        foreach(int element in tal5){
-            Console.WriteLine(summa + element);
-        }
-        double total = tal5.Sum(item => item.Amount);
-       // yield return tal5.Sum();
-
-    }
-*/
   
 
-        public class ClassDisplayCalculator  : ClassFunctions
+public class ClassDisplayCalculator  : ClassFunctions
     {
             public void DisplayAddition(int tal1, int tal2)
             {
@@ -345,9 +237,8 @@ namespace ConsoleApplicationEASTER
                
             }
 
-        public void Display(string checkIfq)
+        public void DisplayMultipleIncome(string checkIfq)
         {
-
             int addInt;
             bool contains = checkIfq.Contains("q");
 
@@ -355,19 +246,11 @@ namespace ConsoleApplicationEASTER
             {
                 Console.Clear();
                 Console.WriteLine("DU HAR VALT ATT AVSLUTA!");
-                //Main(args);
-                //Console.Clear();
 
             }
             else if (int.TryParse(checkIfq, out addInt))
             {
-                //listIncome.AddTal(uInt);
-                //tal5.Add(addInt);
                 this.AddTal(addInt);
-                Console.WriteLine(addInt);
-
-
-                //tal5.Add(new ClassUserActivity { inData1 = addInt });
                 Console.Clear();
             }
             else
