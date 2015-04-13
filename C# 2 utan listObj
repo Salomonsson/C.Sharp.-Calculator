@@ -64,21 +64,15 @@ public enum Operator{
 
 
 public static void Main(string[] args){
-            Menu();
-
-
-            // get value user provided
-            int OperatorInt = Int32.Parse(Console.ReadLine());
-
-            Operator IncomeInteger = (Operator)OperatorInt;
-            
-
+                Menu();
+                // get value user provided
+                int OperatorInt = Int32.Parse(Console.ReadLine());
+                Operator IncomeInteger = (Operator)OperatorInt;
                 Console.Clear();
                 Console.WriteLine("**En simpel miniräknare**");
 
                 //Get instance
                 ClassDisplayCalculator display = new ClassDisplayCalculator();
-                
                 Console.WriteLine();
                 switch (IncomeInteger)
                 {
@@ -179,7 +173,7 @@ public class ClassMultipleIncome {
           return listSumma;
      }
 
-      // Loop out the results.
+      // Loop out the items.
   protected void ShowAllItemsInList(){
           foreach (int value in this.MultipleIncomeList ){
                 Console.Write(" + {0}",value);
@@ -189,8 +183,7 @@ public class ClassMultipleIncome {
 
   
 
-public class ClassDisplayCalculator  : ClassFunctions
-    {
+public class ClassDisplayCalculator  : ClassFunctions{
   internal void DisplayAddition(int x, int y){
                 Console.Write("Svar: {0} + {1} = ", x, y);
                 Console.WriteLine(this.Add(x, y));
@@ -215,7 +208,7 @@ public class ClassDisplayCalculator  : ClassFunctions
                 Console.ReadLine();
             }
 
-   internal void DisplayMultipleIncome(string checkString){
+  internal void DisplayMultipleIncome(string checkString){
             int validInteger;
             bool ifValidInteger = int.TryParse(checkString, out validInteger);
 
@@ -240,7 +233,9 @@ public class ClassDisplayCalculator  : ClassFunctions
                 Console.Clear();
                 Console.WriteLine("Endast siffror!");
             }
-    }
+        }
+        
+        
  }
 }
 
