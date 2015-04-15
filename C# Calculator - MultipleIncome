@@ -64,16 +64,15 @@ public enum Operator{
 
 
 public static void Main(string[] args){
-                Menu();
-                // get value user provided
-                int OperatorInt = Int32.Parse(Console.ReadLine());
-                Operator IncomeInteger = (Operator)OperatorInt;
-                Console.Clear();
-                Console.WriteLine("**En simpel miniräknare**");
 
                 //Get instance
                 ClassDisplayCalculator display = new ClassDisplayCalculator();
-                Console.WriteLine();
+                Menu();
+                
+                // get value user provided
+                int OperatorInt = Int32.Parse(Console.ReadLine());
+                Operator IncomeInteger = (Operator)OperatorInt;
+
                 switch (IncomeInteger)
                 {
                     case Operator.Multiplication:
@@ -184,6 +183,13 @@ public class ClassMultipleIncome {
   
 
 public class ClassDisplayCalculator  : ClassFunctions{
+    //Constructor
+    public ClassDisplayCalculator() {
+        Console.WriteLine("****En simpel minräknare!*****");
+        Console.WriteLine();
+    }
+    
+    
   internal void DisplayAddition(int x, int y){
                 Console.Write("Svar: {0} + {1} = ", x, y);
                 Console.WriteLine(this.Add(x, y));
